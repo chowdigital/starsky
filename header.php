@@ -54,27 +54,40 @@
                 </div>
                 <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasNav"
                     aria-labelledby="offcanvasNavLabel">
-                    <div class="offcanvas-header">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <img id="navImg" src="<?php echo get_template_directory_uri(); ?>/assets/img/white-wide.svg"
-                                alt="Starsky Logo">
-                        </a>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-							'container'      => false,
-							'menu_class'     => 'navbar-nav',
-					
-						)
-					);
-					
-					?>
+                    <div class="container ">
+
+                        <div class="off-canvas-inner">
+
+                            <a id="menuIcon" class="menu-toggle " aria-controls="primary-menu" aria-expanded="false"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+                                <div class="menu-icon "></div>
+                            </a>
+
+
+
+                            <div class="off-canvas-container">
+                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                    <img id="navImg" class=""
+                                        src="<?php echo get_template_directory_uri(); ?>/assets/img/white-logo.svg"
+                                        alt="Starsky Logo">
+                                </a>
+
+
+
+                                <?php
+										wp_nav_menu(
+											array(
+												'theme_location' => 'menu-1',
+												'menu_id'        => 'primary-menu',
+												'container'      => false,
+												'menu_class'     => 'navbar-nav',
+										
+											)
+										);
+										
+										?>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

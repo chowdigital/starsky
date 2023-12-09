@@ -19,18 +19,16 @@
         <div class="col-12 col-lg-6">
             <ul>
                 <li>
-                    <a href="mailto:info@vanguardcamden.co.uk"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/mail.svg"></img>info@vanguardcamden.co.uk</a>
+                    <a href="mailto:hello@starskyandhatch.co.uk "><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/mail.svg"></img>hello@starskyandhatch.co.uk
+                    </a>
                 </li>
+
                 <li>
-                    <a href="tel:02080929044"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/phone.svg"></img>020 8092
-                        9044</a>
-                </li>
-                <li>
-                    <a href="https://what3words.com/Cycle.Waters.Patch"><img
-                            src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/map.svg"></img>What Three
-                        Words: Cycle, Waters, Patch</a>
+                    <a
+                        href="https://www.google.com/maps/place/Starsky+%26+Hatch/@50.8525715,0.5679427,15z/data=!4m2!3m1!1s0x0:0x4b18c26d36aef492?sa=X&ved=2ahUKEwiwmcHy14KDAxUySkEAHaRNCuMQ_BJ6BAhKEAA"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/img/icons/map.svg"></img>
+                        Eversfield Pl, Hastings, Saint Leonards-on-sea TN37 6FD</a>
                 </li>
 
             </ul>
@@ -40,12 +38,9 @@
                 <li>
                     <a href="<?php echo get_home_url(); ?>/privacy-policy">Privacy Policy</a>
                 </li>
-                <li>
-                    <a href="<?php echo get_home_url(); ?>/cookie-policy">Cookie Policy</a>
 
-                </li>
                 <li>
-                    <a href="<?php echo get_home_url(); ?>/terms">Terms & Conditions</a>
+                    <a href="<?php echo get_home_url(); ?>/join-the-team">Join our team</a>
 
                 </li>
 

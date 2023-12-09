@@ -27,10 +27,11 @@ window.onscroll = function () {
 /* appear food & drink menus */
 const items = document.querySelectorAll(".appear2");
 
-function active(entries) {
+function active(entries, observer) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add("inview2");
+      observer.unobserve(entry.target); // Stop observing the element once it's in view
     } else {
       entry.target.classList.remove("inview2");
     }
@@ -42,5 +43,3 @@ const io2 = new IntersectionObserver(active);
 items.forEach(function (item) {
   io2.observe(item);
 });
-
-/* appear food & drink menus end */
