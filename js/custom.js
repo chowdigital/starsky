@@ -1,4 +1,4 @@
-function coolScrollFunction() {
+/*function coolScrollFunction() {
   if (window.innerWidth > 557) {
     // Check if screen width is greater than 557 pixels
     if (
@@ -22,4 +22,25 @@ function coolScrollFunction() {
 
 window.onscroll = function () {
   coolScrollFunction();
-};
+};*/
+
+/* appear food & drink menus */
+const items = document.querySelectorAll(".appear2");
+
+function active(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("inview2");
+    } else {
+      entry.target.classList.remove("inview2");
+    }
+  });
+}
+
+const io2 = new IntersectionObserver(active);
+
+items.forEach(function (item) {
+  io2.observe(item);
+});
+
+/* appear food & drink menus end */
