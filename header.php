@@ -32,49 +32,35 @@
 
 
         <header id="masthead" class="site-header">
-
-            <nav id="site-navigation" class="main-navigation">
-                <div id="navBox" class="cm-nav ">
-                    <div class="container cm-nav-inner">
-                        <a id="menuIcon" class="menu-toggle " aria-controls="primary-menu" aria-expanded="false"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-                            <div class="menu-icon "></div>
-                        </a>
-                        <a id="navBrand" class="navbar-brand " href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <img id="navImg" src="<?php echo get_template_directory_uri(); ?>/assets/img/white-wide.svg"
-                                alt="Vanguard Logo" style>
-                        </a>
-                        <div id="soIcons" class="social-icons">
-                            <a class="instagram-icon " target="_blank"
-                                href="https://www.instagram.com/starskyandhatch/?hl=en"></a>
-                            <a class="facebook-icon " target="_blank"
-                                href="https://www.facebook.com/starskyandhatchhastings/"></a>
+            <div class="fixed-navbar"></div>
+            <div id="off-canvas-menu" class="off-canvas-menu">
+                <div id="open-menu" class="menu-button container-checkbox">
+                    <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
+                    <label for="checkbox1">
+                        <div class="hamburger hamburger1">
+                            <span class="bar bar1"></span>
+                            <span class="bar bar2"></span>
+                            <span class="bar bar3"></span>
+                            <span class="bar bar4"></span>
                         </div>
-                    </div>
+                    </label>
                 </div>
-                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasNav"
-                    aria-labelledby="offcanvasNavLabel">
-                    <div class="container ">
-
-                        <div class="off-canvas-inner">
-
-                            <a id="menuIcon" class="menu-toggle " aria-controls="primary-menu" aria-expanded="false"
-                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-                                <div class="menu-icon "></div>
-                            </a>
+                <div class="menu-content">
+                    <!-- Add your navigation menu items here -->
+                    <?php /* wp_nav_menu(array('theme_location' => 'primary-menu')); */ ?>
+                    <!-- Dummy menu Start -->
 
 
 
-                            <div class="off-canvas-container">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                                    <img id="navImg" class=""
-                                        src="<?php echo get_template_directory_uri(); ?>/assets/img/white-logo.svg"
-                                        alt="Starsky Logo">
-                                </a>
+                    <div class="off-canvas-container">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <img id="navImg" src="<?php echo get_template_directory_uri(); ?>/assets/img/white-logo.svg"
+                                alt="Starsky Logo">
+                        </a>
 
 
 
-                                <?php
+                        <?php
 										wp_nav_menu(
 											array(
 												'theme_location' => 'menu-1',
@@ -86,10 +72,18 @@
 										);
 										
 										?>
-                            </div>
-                        </div>
                     </div>
 
+
                 </div>
-            </nav>
-        </header>
+
+            </div>
+            <div id="soIcons" class="social-icons">
+                <a class="instagram-icon " target="_blank" href="https://www.instagram.com/starskyandhatch/?hl=en"></a>
+                <a class="facebook-icon " target="_blank" href="https://www.facebook.com/starskyandhatchhastings/"></a>
+            </div>
+            <a id="navBrand" class="navbar-brand " href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <img id="navImg" src="<?php echo get_template_directory_uri(); ?>/assets/img/white-wide.svg"
+                    alt="Vanguard Logo" style>
+            </a>
+        </header><!-- #masthead -->

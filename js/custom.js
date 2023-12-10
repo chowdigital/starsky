@@ -43,3 +43,30 @@ const io2 = new IntersectionObserver(active);
 items.forEach(function (item) {
   io2.observe(item);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  /* open and close the animated off-canvas nav */
+  var openMenuButton = document.getElementById("checkbox1");
+  var offCanvasMenu = document.querySelector(".off-canvas-menu");
+
+  // Function to close the off-canvas menu
+  function closeMenu() {
+    offCanvasMenu.classList.remove("open");
+  }
+
+  // Ensure the checkbox is unchecked on page load
+  openMenuButton.checked = false;
+
+  // Add a click event listener to the openMenuButton
+  openMenuButton.addEventListener("click", function () {
+    offCanvasMenu.classList.toggle("open");
+  });
+
+  // Ensure the menu is closed when the page is fully loaded
+  closeMenu();
+
+  // Get a reference to the checkbox element
+  const checkbox = document.getElementById("checkbox1");
+
+  // Add an event listener to listen for changes in the checkbox state
+});

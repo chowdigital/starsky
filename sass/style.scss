@@ -5,13 +5,8 @@ Author: Sean Cloudsdale
 Author URI: https://cloudsdale.co.uk/
 */
 
-@import "abstracts/abstracts";
 @import "generic/normalize";
-@import "generic/box-sizing";
-@import "base/base";
-@import "components/components";
-@import "utilities/accessibility";
-@import "utilities/alignments";
+
 //@import "lightslider";
 
 // ===========================================================================
@@ -168,77 +163,30 @@ button {
 //  3. Navigation
 // ===========================================================================
 
-.menu-toggle {
-  display: block;
-  background-color: transparent;
-  border: none;
-}
-.navbar-toggler-icon {
-  cursor: pointer;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-}
-
-.cm-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: $sunrise;
-  height: 72px;
-  z-index: 999;
-  transition: height 0.5s ease-in-out;
-}
-
-.cm-nav-inner {
-  position: relative;
-}
-
 .navbar-brand {
+  position: fixed;
+  z-index: 1000;
+  top: -10px;
+  left: calc(50% - 80px);
   img {
-    left: calc(50% - 110px);
-    position: relative;
-    width: 220px;
+    width: 160px;
     top: -10px;
-    transition: 0.5s ease-in-out;
   }
 }
-
-.menu-toggle {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  transition: 0.5s ease-in-out;
-
-  .menu-icon {
-    background-image: url(assets/img/icons/menu.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 35px;
-    height: 35px;
-    display: inline-block;
-  }
-}
-
-.menu-toggle {
-  top: 15px;
-  left: 0px;
-  .menu-icon {
-    width: 40px;
-    height: 40px;
+@media (min-width: $md) {
+  .navbar-brand {
+    left: calc(50% - 110px);
+    img {
+      width: 220px;
+    }
   }
 }
 
 .social-icons {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   top: 10px;
-  right: 5px;
+  right: 10px;
   padding: none;
   transition: 0.5s ease-in-out;
 
@@ -246,8 +194,8 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     display: inline-block;
   }
   .instagram-icon {
@@ -261,98 +209,13 @@ button {
   }
 }
 
-.social-icons {
-  top: 20px;
-  right: 0px;
-  a {
-    width: 30px;
-    height: 30px;
-  }
-}
-@media (max-width: 360px) {
-  .navbar-brand {
-    img {
-      left: calc(50% - 80px);
-      position: relative;
-      width: 160px;
-      top: 0px;
-      transition: 0.5s ease-in-out;
-    }
-  }
-}
-@media (max-width: $md) {
+@media (min-width: $md) {
   .social-icons {
-    right: 5px;
-  }
-  .menu-toggle {
-    left: 5px;
+    top: 20px;
+    right: 20px;
   }
 }
 
-.navbar-nav ul {
-  flex-direction: column;
-}
-.navbar-nav li a {
-  padding: 10px;
-  text-transform: capitalize;
-  font-size: 16px;
-  font-weight: 600;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  padding-top: 9px;
-  border-radius: 10px;
-  color: $primary;
-  background-color: $white;
-  margin: 10px 0px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-}
-.navbar-nav li a:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
-.navbar-nav li a:visited,
-.navbar-nav li a:focus,
-.navbar-nav li a:highlight {
-  color: $primary;
-}
-.offcanvas {
-  width: 100%;
-  width: 100vw;
-  height: 100%;
-  height: 100vh;
-  transition-duration: 0.2s;
-  background: $sunrise;
-  -webkit-transition: height 1s;
-  -moz-transition: height 1s;
-  -ms-transition: height 1s;
-  -o-transition: height 1s;
-  transition: height 1s;
-}
-
-.btn-close {
-  background-image: url(assets/img/icons/close.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  display: inline-block;
-  position: absolute;
-  top: 17px;
-  width: 30px;
-  height: 30px;
-  left: -10px;
-  opacity: 1;
-}
-.off-canvas-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-}
 .off-canvas-container {
   width: 100%;
   max-width: 400px;
@@ -365,15 +228,261 @@ button {
     padding-bottom: 30px;
   }
 }
-.menu-icon,
-.social-icons a {
-  transition-duration: 0.3s;
+.navbar-nav li a {
+  padding: 10px;
+  width: 100%;
+  display: block;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  padding-top: 9px;
+  border-radius: 10px;
+  color: $primary;
+  background-color: $white;
+  margin: 10px 0px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
-.menu-icon:hover,
-.social-icons a:hover {
-  opacity: 0.75;
+.navbar-nav li a:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.navbar-nav li a:visited,
+.navbar-nav li a:focus,
+.navbar-nav li a:highlight {
+  color: $primary;
 }
 
+ul,
+ol {
+  margin: 0;
+}
+/* Off-canvas menu container */
+.off-canvas-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Start off-canvas menu off-screen */
+  width: 100%;
+  height: 100%;
+  z-index: 2000; /* Ensure it appears on top of other elements */
+  transition: left 0.3s ease; /* Add a smooth transition effect */
+  background: $sunrise;
+}
+
+/* Menu content */
+.menu-content {
+  padding: 20px; /* Add padding or styling to your menu content */
+}
+
+/* Button to open the menu */
+.menu-button {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border: none;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above the menu */
+}
+
+/* Adjust the button and menu position when the menu is open */
+.off-canvas-menu.open {
+  left: 0;
+}
+
+/* animate opening closing */
+
+/* GENERAL STYLES */
+.visuallyHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.container-checkbox {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  label {
+    width: 50px;
+    height: 50px;
+    .hamburger {
+      top: 10px;
+    }
+  }
+}
+@media (min-width: $md) {
+  .container-checkbox label {
+    height: 67px;
+    width: 67px;
+  }
+  .container-checkbox label .hamburger {
+    top: 20px;
+  }
+}
+.hamburger {
+  margin: 0 auto;
+  width: 40px;
+  height: 30px;
+  position: relative;
+}
+
+.hamburger .bar {
+  padding: 0;
+  width: 40px;
+  height: 5px;
+  background-color: $white;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2,
+.bar3 {
+  top: 12px;
+}
+
+.bar3 {
+  right: 0;
+}
+
+.bar4 {
+  bottom: 0;
+}
+
+/* HAMBURGER 1 */
+.checkbox1:checked + label > .hamburger1 > .bar1 {
+  transform: rotate(45deg);
+  transform-origin: 5%;
+  width: 44px;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar2 {
+  transform: translateX(-40px);
+  background-color: transparent;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar3 {
+  transform: translateX(40px);
+  background-color: transparent;
+}
+
+.checkbox1:checked + label > .hamburger1 > .bar4 {
+  transform-origin: 5%;
+  transform: rotate(-45deg);
+  width: 44px;
+}
+// Main Logo
+#open-menu {
+  z-index: 1000;
+}
+#mainLogo {
+  width: 100%;
+  position: fixed;
+  top: 9px;
+  display: flex;
+  justify-content: center;
+  z-index: 1001;
+  .text-logo {
+    display: none;
+  }
+  .img-logo {
+    width: 40px;
+    padding-top: 1px;
+  }
+}
+@media (min-width: $md) {
+  .img-logo {
+    width: 50px;
+    padding-top: 5px;
+  }
+}
+@media (min-width: $lg) {
+  #mainLogo {
+    width: 100%;
+    top: 23px;
+    display: flex;
+    justify-content: center;
+    .text-logo {
+      width: 220px;
+      display: block;
+    }
+    .img-logo {
+      display: none;
+    }
+  }
+}
+
+// The Off canvas bit
+.menu-content {
+  background: $sunrise;
+  height: 100%;
+  height: 100vh;
+  color: $white;
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#fancyMenu {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+#fancyMenu a {
+  text-decoration: none;
+  text-transform: lowercase;
+  padding: 10px 0px;
+  font-size: 15px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: $sm) {
+  #fancyMenu a {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: $md) {
+  #fancyMenu a {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+}
+
+.fixed-navbar {
+  position: fixed;
+  width: 100%;
+  width: 100vw;
+  height: 50px;
+  background: $sunrise;
+  z-index: 1000;
+}
+@media (min-width: $md) {
+  .fixed-navbar {
+    height: 67px;
+  }
+}
 // ===========================================================================
 //  4. Footer
 // ===========================================================================
@@ -539,35 +648,35 @@ footer a:hover {
 }
 //make nav appear delayed
 
-#site-navigation .off-canvas-inner .navbar-nav li {
+.site-header .off-canvas-container .navbar-nav li {
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
   opacity: 0;
   -webkit-transform: translateY(20px);
   transform: translateY(20px);
 }
-#site-navigation .show .off-canvas-inner .navbar-nav li {
+.site-header .open .off-canvas-container .navbar-nav li {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-#site-navigation .off-canvas-inner .off-canvas-container #navImg {
+.site-header .off-canvas-container #navImg {
   -webkit-transition: all 0.8s;
   transition: all 0.8s;
   opacity: 0;
   -webkit-transform: translateY(20px);
   transform: translateY(20px);
 }
-#site-navigation .show .off-canvas-inner .off-canvas-container #navImg {
+.site-header .open .off-canvas-container #navImg {
   opacity: 1;
   -webkit-transform: none;
   transform: none;
   -webkit-transition-delay: 0.1s;
   transition-delay: 0.1s;
 }
-#site-navigation .show .off-canvas-inner .navbar-nav li {
+.site-header .open .off-canvas-container .navbar-nav li {
   $delay-increment: 0.1s;
 
   @for $i from 1 through 20 {
