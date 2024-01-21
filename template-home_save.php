@@ -1,38 +1,23 @@
 <?php /* Template Name: Home */ get_header(); ?>
 
 <main class="home">
-    <!-- <div class="full-height-column">
+    <div class="full-height-column">
         <div class="hero-img round-br shadow"
             style="background-image:  url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
         </div>
         <div class="logo-landing appear2">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunset.svg" alt="">
         </div>
-    </div> -->
-    <div class="flex-container home-img-1">
-
-
-        <div class=" img-left round-br lg-img shadow "
-            style="background-image:  url(<?php the_post_thumbnail_url(); ?>); background-repeat: no-repeat; background-position: center; background-size: cover;">
-
-        </div>
-        <div class="text-box home-intro sm-none">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/sunset.svg" alt="">
-        </div>
     </div>
+
     <div class="flex-container home-img-1">
+
         <div class="text-box home-intro">
-            <h3>Gift Vouchers</h3>
-            <p> Give the gift of Starsky & Hatch!</p>
-            <p> Our gift vouchers are the perfect way to treat a friend or loved one to our artisan coffee, wholesome
-                food & beachside vibes.
-                Make it extra special with a personalised message. Delivery as an E Voucher for an instant last minute
-                gift.
-
-
-
-            </p>
-            <a href="https://squareup.com/gift/ML05GKGPNHS3X/order" class="btn btn-sunset shadow">Shop Now</a>
+            <h3>give them Starsky & Hatch this christmas</h3>
+            <p>Taxidermy williamsburg fixie, neutral milk hotel church-key kickstarter kombucha pinterest Brooklyn chia
+                vice jawn. Letterpress yr jean shorts VHS green juice banjo, vinyl slow-carb meditation same neutral
+                milk hotel cray XOXO. Woke flexitarian typewriter ennui marxism.</p>
+            <a class="btn btn-sunset shadow">Shop Now</a>
         </div>
         <div class=" img-right round-l lg-img shadow sm-none"
             style="background-image:  url( https://starskyandhatch.co.uk/wp-content/uploads/2023/12/2980F102-020D-42FE-AC4F-89FF098F28A7-scaled.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">

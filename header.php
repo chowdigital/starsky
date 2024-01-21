@@ -31,13 +31,13 @@
 
 
 
-        <header id="masthead" class="site-header">
+        <header id="masthead" class="site-header" style="position: fixed;top: 0;">
             <div class="fixed-navbar"></div>
-            <div id="off-canvas-menu" class="off-canvas-menu">
+            <div id="off-canvas-menu " class="off-canvas-menu">
                 <div id="open-menu" class="menu-button container-checkbox">
                     <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
                     <label for="checkbox1">
-                        <div class="hamburger hamburger1">
+                        <div class="d-none hamburger hamburger1">
                             <span class="bar bar1"></span>
                             <span class="bar bar2"></span>
                             <span class="bar bar3"></span>

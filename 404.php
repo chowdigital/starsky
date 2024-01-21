@@ -4,57 +4,52 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Cloudsdale_Theme
+ * @package  cloudsdale-theme
  */
 
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main ">
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cloudsdale-master' ); ?></h1>
-			</header><!-- .page-header -->
+    <div class="full-height-column">
+        <div class="hero-img round-br shadow"
+            style="background-image:  url(<?php echo get_template_directory_uri(); ?>/assets/img/404.png); background-repeat: no-repeat; background-position: center; background-size: cover;">
+        </div>
+        <div class="container appear2">
+            <h1 class="">Oops, page not found</h1>
+        </div>
+    </div>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cloudsdale-master' ); ?></p>
 
-					<?php
-					get_search_form();
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'cloudsdale-master' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
 
-					<?php
-					/* translators: %1$s: smiley */
-					$cloudsdale_master_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'cloudsdale-master' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$cloudsdale_master_archive_content" );
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+    <section class="container">
+        <h2>What page were you looking for? </h2>
+        <a href="<?php get_home_url() ?>">
+            <h3>Home</h3>
+        </a>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
+        <a href="<?php get_home_url() ?>/our-menu/">
+            <h3>Menus</h3>
+        </a>
 
-	</main><!-- #main -->
+        <a href="<?php get_home_url() ?>/our-story/">
+            <h3>About us</h3>
+        </a>
+
+
+
+
+
+
+    </section>
+
+
+
+</main><!-- #main -->
 
 <?php
 get_footer();

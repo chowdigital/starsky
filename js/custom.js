@@ -69,4 +69,45 @@ document.addEventListener("DOMContentLoaded", function () {
   const checkbox = document.getElementById("checkbox1");
 
   // Add an event listener to listen for changes in the checkbox state
+  // body overflow scroll
+  var offCanvasMenu = document.getElementById("off-canvas-menu");
+
+  // Function to update body overflow property
+  function updateBodyOverflow() {
+    if (offCanvasMenu.classList.contains("open")) {
+      // If it has the class, set body overflow to hidden
+      document.body.style.overflow = "hidden";
+    } else {
+      // If it doesn't have the class, set body overflow to scroll
+      document.body.style.overflow = "scroll";
+    }
+  }
+
+  // Function to check viewport width
+  function isMobile() {
+    return window.innerWidth <= 574;
+  }
+
+  // Call the function on page load
+  updateBodyOverflow();
+
+  // Add an event listener to handle changes in the "open" class
+  offCanvasMenu.addEventListener("click", function () {
+    // Toggle the "open" class on each click
+    offCanvasMenu.classList.toggle("open");
+
+    // Update the body overflow property if the viewport width is up to 574 pixels
+    if (isMobile()) {
+      updateBodyOverflow();
+    }
+  });
+
+  // Add a resize event listener to update the body overflow property on window resize
+  window.addEventListener("resize", function () {
+    // Update the body overflow property if the viewport width is up to 574 pixels
+    if (isMobile()) {
+      updateBodyOverflow();
+    }
+  });
+  // end
 });

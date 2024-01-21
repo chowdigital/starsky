@@ -10,13 +10,13 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary" class="archive">
 
-    <div class="row">
-        <div class="col-12 text-center pt-5">
-            <h1 class="display-3">HAPPENING AT THE HATCH</h1>
-        </div>
+
+    <div class="text-center section-heading">
+        <h1 class="display-3">WHAT'S ON AT THE HATCH</h1>
     </div>
+
 
     <?php if ( have_posts() ) : ?>
 
@@ -35,7 +35,7 @@ get_header();
 
 
     <?php
-			echo '  <div class="row whats-on"> ';
+			echo '  <div class="whats-on"> ';
 			$featured_image_url = get_the_post_thumbnail_url(get_the_ID(), 'full'); // Change 'full' to the desired image size
 			if ($featured_image_url) {
 				echo '    <div class="sml-img shadow appear2"
@@ -45,14 +45,14 @@ get_header();
 
 				</div>';
 			}
-			echo '  <div class="blog-intro pt-5 pb-5">';
+			echo '  <div class="blog-intro">';
 						
 			// Echo the post title
 						echo '<h3>' . get_the_title() . '</h3>';
 				
 						// Echo the post content
-						echo '<div>' . wp_trim_words(get_the_content(), 40) . '</div>';		
-						echo '<a class="btn btn-sunrise shadow mt-4" href="' . esc_url(get_permalink($page_id)) . '" >Read More</a>';
+						echo '<div class="pt-1">' . wp_trim_words(get_the_content(), 40) . '</div>';		
+						echo '<a class="btn btn-sunrise shadow" href="' . esc_url(get_permalink($page_id)) . '" >Read More</a>';
 
 						echo '</div>';		
 						// Echo the featured image URL

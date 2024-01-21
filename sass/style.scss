@@ -27,13 +27,14 @@ Author URI: https://cloudsdale.co.uk/
 //  10. Home
 //  11. Scrolling Text
 //  12. What's On
+//  13. bootstrap favorites
 
 $primary: #ef236b;
 $highlight: #feb002;
 $white: #efeeeb;
 $black: #000;
 $sunrise: linear-gradient(to bottom, #feb002, #ef236b);
-$sunset: linear-gradient(to bottom, #0233d1, #ef236b);
+$sunset: linear-gradient(to bottom, #ef236b, #0233d1);
 
 $xs: 575px;
 $sm: 576px;
@@ -58,7 +59,9 @@ body {
   /* Add other styles as needed */
   margin: 0; /* Remove default body margin for a cleaner look */
 }
-// Settings for navbar in edit mode
+body {
+  overflow: scroll;
+}
 .coming-soon {
   position: fixed;
   width: 100vw;
@@ -99,24 +102,19 @@ body {
 // ===========================================================================
 //  2. Typography
 // ===========================================================================
-@font-face {
-  font-family: "Falco Outline";
-  src: url("../starsky/assets/fonts/Falco_Black_Outline.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Falco Negative";
-  src: url("../starsky/assets/fonts/Falco-Black-Inline-Negative.ttf")
-    format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 @font-face {
   font-family: "Falco Black";
-  src: url("../starsky/assets/fonts/FalcoBlack.ttf") format("truetype");
-  font-weight: normal;
+  src: url("../starsky/assets/fonts/FalcoBlack.eot");
+  src: url("../starsky/assets/fonts/FalcoBlack.eot?#iefix")
+      format("embedded-opentype"),
+    url("../starsky/assets/fonts/FalcoBlack.woff") format("woff"),
+    url("../starsky/assets/fonts/FalcoBlack.ttf") format("truetype"),
+    url("../starsky/assets/fonts/FalcoBlack.svg#Falco_Black_Outline")
+      format("svg");
   font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
 @font-face {
   font-family: "Monda";
@@ -125,12 +123,11 @@ body {
   font-style: normal;
 }
 h1 {
-  font-family: "Falco Negative", sans-serif;
-  font-style: normal;
+  font-family: "Monda", sans-serif;
+  text-transform: uppercase;
 }
 h2 {
-  font-family: "Falco Outline", sans-serif;
-  font-style: normal;
+  font-family: "Monda";
 }
 h3,
 h4,
@@ -159,6 +156,31 @@ button {
 .btn:visited {
   color: $white;
 }
+
+h1 {
+  font-size: 50px; //calc(3rem + 0.6vw);
+  letter-spacing: 0.05em;
+}
+h2 {
+  font-size: calc(1.4rem + 0.6vw);
+  letter-spacing: 0.05em;
+}
+h3 {
+  font-size: calc(1.3rem + 0.6vw);
+  letter-spacing: 0.05em;
+  margin-bottom: 0;
+}
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
 // ===========================================================================
 //  3. Navigation
 // ===========================================================================
@@ -166,15 +188,15 @@ button {
 .navbar-brand {
   position: fixed;
   z-index: 1000;
-  top: -10px;
+  top: 4px;
   left: calc(50% - 80px);
   img {
     width: 160px;
-    top: -10px;
   }
 }
 @media (min-width: $md) {
   .navbar-brand {
+    top: -10px;
     left: calc(50% - 110px);
     img {
       width: 220px;
@@ -185,7 +207,7 @@ button {
 .social-icons {
   position: fixed;
   z-index: 1000;
-  top: 10px;
+  top: 20px;
   right: 10px;
   padding: none;
   transition: 0.5s ease-in-out;
@@ -218,7 +240,7 @@ button {
 
 .off-canvas-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -230,7 +252,6 @@ button {
 }
 .navbar-nav li a {
   padding: 10px;
-  width: 100%;
   display: block;
   text-decoration: none;
   text-transform: capitalize;
@@ -239,7 +260,6 @@ button {
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
-  background-size: 200% auto;
   padding-top: 9px;
   border-radius: 10px;
   color: $primary;
@@ -262,21 +282,28 @@ ul,
 ol {
   margin: 0;
 }
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 /* Off-canvas menu container */
 .off-canvas-menu {
   position: fixed;
   top: 0;
   left: -100%; /* Start off-canvas menu off-screen */
   width: 100%;
-  height: 100%;
+
   z-index: 2000; /* Ensure it appears on top of other elements */
   transition: left 0.3s ease; /* Add a smooth transition effect */
   background: $sunrise;
+  transition: 0.3s ease; /* Add a smooth transition effect */
 }
 
 /* Menu content */
 .menu-content {
   padding: 20px; /* Add padding or styling to your menu content */
+  transition: 0.3s ease; /* Add a smooth transition effect */
 }
 
 /* Button to open the menu */
@@ -313,10 +340,10 @@ ol {
   justify-content: space-between;
   background-color: transparent;
   label {
-    width: 50px;
-    height: 50px;
+    height: 67px;
+    width: 67px;
     .hamburger {
-      top: 10px;
+      top: 20px;
     }
   }
 }
@@ -402,7 +429,7 @@ ol {
   }
   .img-logo {
     width: 40px;
-    padding-top: 1px;
+    padding-top: 5px;
   }
 }
 @media (min-width: $md) {
@@ -431,7 +458,8 @@ ol {
 .menu-content {
   background: $sunrise;
   height: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   color: $white;
   text-decoration: none;
   list-style-type: none;
@@ -439,42 +467,12 @@ ol {
   justify-content: center;
   flex-direction: column;
 }
-#fancyMenu {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-#fancyMenu a {
-  text-decoration: none;
-  text-transform: lowercase;
-  padding: 10px 0px;
-  font-size: 15px;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: $sm) {
-  #fancyMenu a {
-    font-size: 17px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-@media (min-width: $md) {
-  #fancyMenu a {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 20px;
-  }
-}
 
 .fixed-navbar {
   position: fixed;
   width: 100%;
   width: 100vw;
-  height: 50px;
+  height: 67px;
   background: $sunrise;
   z-index: 1000;
 }
@@ -488,35 +486,18 @@ ol {
 // ===========================================================================
 #footer {
   background: $sunset;
+  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.footer-item {
+  line-height: 40px;
+  display: flex;
 }
 //remove at bottom of footer
 .page {
   margin: 0;
   padding-top: 0px;
-}
-
-.footer-logo {
-  background-color: $white;
-  width: 200px;
-  position: relative;
-  height: 145px;
-  top: 0;
-  left: calc(50% - 100px);
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  img {
-    width: 160px;
-    height: 180px;
-    display: block;
-    left: calc(50% - 80px);
-    position: relative;
-    top: -40px;
-  }
-}
-footer ul,
-footer li {
-  list-style-type: none;
-  color: $white;
 }
 
 footer a,
@@ -526,10 +507,12 @@ footer a:visited {
   font-weight: 400;
   font-size: 0.9em;
   text-decoration: none;
+  margin-bottom: 3px;
   img {
-    width: 2em;
-    height: 2em;
     margin-right: 5px;
+    margin-top: 5px;
+    width: 30px;
+    margin-bottom: -10px;
   }
 }
 footer a:hover {
@@ -539,26 +522,54 @@ footer a:hover {
 // ===========================================================================
 //  5. Containers
 // ===========================================================================
+.container {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: $md) {
+  .container {
+    width: 80%;
+  }
+}
+@media (min-width: $lg) {
+  .container {
+    width: 70%;
+  }
+}
+@media (min-width: $xl) {
+  .container {
+    width: 60%;
+  }
+}
 
+.full-height-column {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  flex-direction: column;
+}
+@media (min-width: $md) {
+  .full-height-column {
+  }
+}
 // ===========================================================================
 //  6. Buttons
 // ===========================================================================
-.btn-container {
-  display: inline-block;
-  position: relative;
-}
 
 .btn:hover {
   background-position: right center;
   color: $white;
 }
 .btn {
+  display: block;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: $white;
-  padding-top: 9px;
+  padding-top: 10px;
+  padding-bottom: 7px;
   border-radius: 10px;
 }
 .btn-sunset {
@@ -600,13 +611,24 @@ footer a:hover {
 .lg-img {
   height: 600px;
 }
+.hero-img {
+  flex-basis: 70%;
+  margin-right: 20%;
+}
+
 .logo-landing {
-  padding-bottom: 50px;
-  padding-top: 50px;
+  flex-basis: 30%;
+
+  text-align: right;
+  img {
+    height: calc(100% - 30px);
+    margin-top: 15px;
+    margin-right: 5%;
+  }
 }
 @media (min-width: $md) {
-  .logo-landing {
-    padding-top: 600px;
+  .home-img-1 {
+    margin-top: 40px;
   }
   .round-br {
     border-bottom-right-radius: 300px;
@@ -625,6 +647,70 @@ footer a:hover {
 
   .lg-img {
     height: 800px;
+  }
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.img-left {
+  flex-basis: 80%;
+  margin-left: 0%;
+}
+.img-right {
+  flex-basis: 80%;
+  margin-left: 20%;
+}
+.text-box {
+  flex-basis: 80%;
+  margin-left: 10%;
+}
+
+.sm-none {
+  display: none;
+}
+.flex-80-left {
+  flex-basis: 80%;
+}
+.flex-80-right {
+  flex-basis: 80%;
+  margin-left: 20%;
+}
+
+@media (min-width: $md) {
+  .flex-container {
+    flex-wrap: nowrap;
+  }
+  .img-left,
+  .img-right {
+    flex-basis: 50%;
+    margin-left: 0%;
+  }
+  .text-box {
+    flex-basis: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .hero-img {
+    margin-right: 40%;
+  }
+  .sm-none {
+    display: block;
+  }
+}
+@media (min-width: $lg) {
+  .img-left,
+  .img-right {
+    flex-basis: 60%;
+    margin-left: 0%;
+  }
+  .text-box {
+    flex-basis: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .hero-img {
+    margin-right: 25%;
   }
 }
 // ===========================================================================
@@ -707,7 +793,8 @@ footer a:hover {
 // ===========================================================================
 
 .wrapper {
-  max-width: 100%;
+  width: 100%;
+  flex-basis: 100%;
   overflow: hidden;
 }
 
@@ -727,6 +814,7 @@ footer a:hover {
 .scroll-reverse h1 {
   display: inline-block;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @keyframes marquee {
@@ -750,63 +838,6 @@ footer a:hover {
 // ===========================================================================
 //  12. What's On
 // ===========================================================================
-.whats-on {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 100px;
-  flex-wrap: wrap;
-  .sml-img {
-    flex-basis: 80%;
-    margin-left: 0%;
-    border-top-right-radius: 150px;
-    border-bottom-right-radius: 150px;
-  }
-  .blog-intro {
-    flex-basis: 100%;
-    padding-right: 10%;
-    padding-left: 10%;
-  }
-}
-.whats-on:nth-child(even) {
-  .sml-img {
-    margin-left: 20%;
-    border-bottom-left-radius: 150px;
-    border-top-left-radius: 150px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
-}
-@media (min-width: $md) {
-  .whats-on:nth-child(even) {
-    .sml-img {
-      order: 2;
-      margin-left: 0%;
-    }
-  }
-  .whats-on {
-    .sml-img {
-      flex-basis: 60%;
-    }
-    .blog-intro {
-      flex-basis: 40%;
-      padding-right: 5%;
-      padding-left: 5%;
-    }
-  }
-}
-@media (min-width: $xl) {
-  .whats-on {
-    .sml-img {
-      flex-basis: 80%;
-      margin-left: 0%;
-    }
-    .blog-intro {
-      flex-basis: 30%;
-      padding-right: 5%;
-      padding-left: 5%;
-    }
-  }
-}
 
 // Homepage loop
 
@@ -838,6 +869,11 @@ footer a:hover {
   padding: 10% 20%;
 }
 @media (min-width: $md) {
+  .all-posts {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .post-content {
     padding: 0 0;
   }
@@ -887,4 +923,103 @@ footer a:hover {
 .section-heading {
   padding-top: 75px;
   padding-bottom: 25px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: $md) {
+  .section-heading {
+    text-align: center;
+  }
+}
+// whats on page
+
+.whats-on {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  .sml-img {
+    flex-basis: 80%;
+    margin-left: 0%;
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+  }
+  .blog-intro {
+    flex-basis: 100%;
+    padding-right: 10%;
+    padding-left: 10%;
+    .btn {
+      margin-top: 1em;
+    }
+  }
+}
+.whats-on:nth-child(even) {
+  .sml-img {
+    margin-left: 20%;
+    border-bottom-left-radius: 150px;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+@media (min-width: $md) {
+  .archive .whats-on {
+    flex-wrap: nowrap;
+    display: flex;
+  }
+  .archive .whats-on .blog-intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .whats-on:nth-child(even) {
+    .sml-img {
+      order: 2;
+      margin-left: 0%;
+    }
+  }
+  .whats-on {
+    .sml-img {
+      flex-basis: 60%;
+    }
+    .blog-intro {
+      flex-basis: 40%;
+      padding-right: 5%;
+      padding-left: 5%;
+    }
+  }
+}
+@media (min-width: $xl) {
+  .whats-on {
+    .sml-img {
+      flex-basis: 80%;
+      margin-left: 0%;
+    }
+    .blog-intro {
+      flex-basis: 30%;
+      padding-right: 5%;
+      padding-left: 5%;
+    }
+  }
+}
+
+// ===========================================================================
+//  13. Bootstrap favorites
+// ===========================================================================
+.pt-1 {
+  padding-top: 1em;
+}
+.d-none {
+  display: none;
+}
+
+.sm-none {
+  display: none;
+}
+
+@media (min-width: $md) {
+  .sm-none {
+    display: flex;
+  }
 }

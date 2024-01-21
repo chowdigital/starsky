@@ -20,7 +20,7 @@
             <a class="btn btn-sunset shadow">Shop Now</a>
         </div>
         <div class="d-none d-md-block offset-1 col-md-7 col-lg-8 offset-lg-1 round-l lg-img shadow"
-            style="background-image:  url( https://seanc319.sg-host.com/wp-content/uploads/2023/12/2980F102-020D-42FE-AC4F-89FF098F28A7-scaled.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            style="background-image:  url( https://starskyandhatch.co.uk/wp-content/uploads/2023/12/2980F102-020D-42FE-AC4F-89FF098F28A7-scaled.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
 
         </div>
     </div>
@@ -37,7 +37,7 @@
 
     <div class="row">
         <div class="col-10 round-r sml-img shadow appear2"
-            style="background-image:  url(https://seanc319.sg-host.com/wp-content/uploads/2023/12/IMG_7789-scaled.jpeg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            style="background-image:  url(https://starskyandhatch.co.uk/wp-content/uploads/2023/12/IMG_7789-scaled.jpeg); background-repeat: no-repeat; background-position: center; background-size: cover;">
         </div>
 
         <div class="wrapper">
@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="col-10 offset-2 round-l sml-img shadow appear2"
-            style="background-image:  url(https://seanc319.sg-host.com/wp-content/uploads/2023/12/C4A1CA56-790C-4CF6-9FB5-10F5F8D84404-1-scaled.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
+            style="background-image:  url(https://starskyandhatch.co.uk/wp-content/uploads/2023/12/C4A1CA56-790C-4CF6-9FB5-10F5F8D84404-1-scaled.jpg); background-repeat: no-repeat; background-position: center; background-size: cover;">
         </div>
 
         <div class="wrapper">
