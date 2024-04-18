@@ -37,7 +37,7 @@
                 <div id="open-menu" class="menu-button container-checkbox">
                     <input type="checkbox" id="checkbox1" class="checkbox1 visuallyHidden">
                     <label for="checkbox1">
-                        <div class="d-none hamburger hamburger1">
+                        <div class="hamburger hamburger1">
                             <span class="bar bar1"></span>
                             <span class="bar bar2"></span>
                             <span class="bar bar3"></span>

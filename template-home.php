@@ -39,7 +39,7 @@
 
         </div>
     </div>
-    <!-- 
+
     <div class="wrapper">
         <div class="marquee">
             <h1>BEACH VIBES &nbsp 🏖️ &nbsp BEACH VIBES &nbsp 🏖️ &nbsp BEACH VIBES &nbsp 🏖️ &nbsp
@@ -160,7 +160,7 @@
                 echo 'No recent posts found.';
             endif;
             ?>
-    </div> -->
+    </div>
 </main>
 
 

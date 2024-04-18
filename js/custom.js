@@ -22,7 +22,7 @@
 
 window.onscroll = function () {
   coolScrollFunction();
-};*/
+}; */
 
 /* appear food & drink menus */
 const items = document.querySelectorAll(".appear2");
